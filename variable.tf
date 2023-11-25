@@ -28,11 +28,11 @@ variable "subnet_output" {
   description = "subnet output"
 }
 
-variable "private_dns_zone_output" {
-  type        = map(any)
-  default     = {}
-  description = "private dns zone output"
-}
+# variable "private_dns_zone_output" {
+#   type        = map(any)
+#   default     = {}
+#   description = "private dns zone output"
+# }
 
 variable "default_values" {
   type        = any
