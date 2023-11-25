@@ -10,11 +10,11 @@ variable "resource_group_output" {
   description = "resource group output"
 }
 
-# variable "storage_account_output" {
-#   type        = map(any)
-#   default     = {}
-#   description = "storage account output"
-# }
+variable "storage_account_output" {
+  type        = map(any)
+  default     = {}
+  description = "storage account output"
+}
 
 variable "key_vault_output" {
   type        = map(any)
