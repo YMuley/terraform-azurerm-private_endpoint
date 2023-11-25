@@ -16,11 +16,11 @@ variable "resource_group_output" {
 #   description = "storage account output"
 # }
 
-# variable "key_vault_output" {
-#   type        = map(any)
-#   default     = {}
-#   description = "key vault output"
-# }
+variable "key_vault_output" {
+  type        = map(any)
+  default     = {}
+  description = "key vault output"
+}
 
 variable "subnet_output" {
   type        = map(any)
