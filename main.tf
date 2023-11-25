@@ -10,7 +10,7 @@ resource "azurerm_private_endpoint" "private_endpoint" {
 
   #------ Storage Account 
   dynamic "private_service_connection" {
-    for_each = each.value.resource_type == "storage_account" ? [{}] : []
+    for_each = each.value.storage_account
     content {
       name                           = "private_service_connection_${each.value.name}"
       is_manual_connection           = false
@@ -21,7 +21,7 @@ resource "azurerm_private_endpoint" "private_endpoint" {
 
   #------ Key Vault
   dynamic "private_service_connection" {
-    for_each = each.value.resource_type == "key_vault" ? [{}] : []
+    for_each = each.value.key_vault
     content {
       name                           = "private_service_connection_${each.value.name}"
       is_manual_connection           = false
