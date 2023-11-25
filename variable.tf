@@ -16,24 +16,6 @@ variable "storage_account_output" {
   description = "storage account output"
 }
 
-variable "key_vault_output" {
-  type        = map(any)
-  default     = {}
-  description = "key vault output"
-}
-
-variable "windows_web_app_output" {
-  type        = map(any)
-  default     = {}
-  description = "windows web app output"
-}
-
-variable "redis_cache_output" {
-  type        = map(any)
-  default     = {}
-  description = "redis cache output"
-}
-
 variable "subnet_output" {
   type        = map(any)
   default     = {}
