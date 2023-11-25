@@ -14,7 +14,7 @@ resource "azurerm_private_endpoint" "private_endpoint" {
     content {
       name                           = "private_service_connection_${each.value.name}"
       is_manual_connection           = false
-      private_connection_resource_id = var.storage_account_output[each.value.resource_name].id
+      private_connection_resource_id = var.storage_account_output[each.value.name].id
     }
   }
 
