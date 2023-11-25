@@ -15,20 +15,19 @@ resource "azurerm_private_endpoint" "private_endpoint" {
       name                           = "private_service_connection_${each.value.name}"
       is_manual_connection           = false
       private_connection_resource_id = var.storage_account_output[each.value.resource_name].id
-      subresource_names              = each.value.subresource_name
     }
   }
 
-  #------ Key Vault
-  dynamic "private_service_connection" {
-    for_each = each.value.key_vault
-    content {
-      name                           = "private_service_connection_${each.value.name}"
-      is_manual_connection           = false
-      private_connection_resource_id = var.key_vault_output[each.value.resource_name].id
-      subresource_names              = each.value.subresource_name
-    }
-  }
+  # #------ Key Vault
+  # dynamic "private_service_connection" {
+  #   for_each = each.value.key_vault
+  #   content {
+  #     name                           = "private_service_connection_${each.value.name}"
+  #     is_manual_connection           = false
+  #     private_connection_resource_id = var.key_vault_output[each.value.resource_name].id
+  #     subresource_names              = each.value.subresource_name
+  #   }
+  # }
 
   #   dynamic "private_dns_zone_group" {
   #     for_each = each.value.private_dns_zone_group
